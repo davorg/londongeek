@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>London Geek — events for London’s nerdy side</title>
@@ -8,50 +9,94 @@
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <header class="wrap">
-    <h1>London Geek</h1>
-    <p class="lede">A low-noise, always-up-to-date list of geeky events in London.</p>
-    <p class="small">Last updated automatically by the source calendars.</p>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <h1>London Geek</h1>
+        <span class="badge">Events</span>
+      </div>
+      <div class="meta">Updated <span id="updated">just now</span></div>
+    </div>
   </header>
 
-  <main class="wrap grid">
-    <section class="card">
-      <h2>Tonight / This week</h2>
-      <p class="small">Agenda view of a public calendar (no login needed).</p>
-
-      <!-- London Hackspace public calendar (agenda view) -->
-      <iframe
-        title="London Hackspace events"
-        class="calendar"
-        src="https://calendar.google.com/calendar/embed?mode=AGENDA&showTitle=0&showTabs=0&showCalendars=0&showTz=0&wkst=2&hl=en_GB&ctz=Europe%2FLondon&src=gc1bopmh3c5n0ogvlo6ceujlkc%40group.calendar.google.com"
-        loading="lazy"
-      ></iframe>
-
-      <p class="small">
-        Source: London Hackspace events calendar.
+  <main class="wrap">
+    <section class="hero">
+      <h2>Geeky things to do in London</h2>
+      <p>
+        A low-noise, always-fresh listing of meetups, hack nights, talks, workshops, and other nerd-friendly events —
+        pulled directly from public calendars.
       </p>
-    </section>
-
-    <section class="card">
-      <h2>Submit a source</h2>
-      <p>If you run a London geek group and have a public iCal / Google Calendar / RSS feed, send it in.</p>
-      <p class="small">
-        For now: open a GitHub issue in the site repo with the feed URL.
-      </p>
-    </section>
-
-    <section class="card">
-      <h2>Coming next</h2>
-      <ul>
-        <li>More calendars (AI, data, security, web, games, makers)</li>
-        <li>Topic pages you can rank for (e.g. “AI meetups London”)</li>
-        <li>Weekly email digest (optional)</li>
+      <ul class="pills" aria-label="Shortcuts">
+        <li><a href="#events">This week</a></li>
+        <li><a href="#sources">Sources</a></li>
+        <li><a href="#submit">Add a calendar</a></li>
       </ul>
+    </section>
+
+    <section class="grid">
+      <section class="card" id="events">
+        <h3>Tonight / This week</h3>
+        <p class="small">Agenda view from a public calendar (no login needed).</p>
+
+        <!-- London Hackspace public calendar (agenda view) -->
+        <iframe
+          title="London Hackspace events"
+          class="calendar"
+          src="https://calendar.google.com/calendar/embed?mode=AGENDA&showTitle=0&showTabs=0&showCalendars=0&showTz=0&wkst=2&hl=en_GB&ctz=Europe%2FLondon&src=gc1bopmh3c5n0ogvlo6ceujlkc%40group.calendar.google.com"
+          loading="lazy"
+        ></iframe>
+
+        <p class="small">
+          Source: London Hackspace public events calendar.
+        </p>
+      </section>
+
+      <aside>
+        <section class="card" id="sources">
+          <h3>Sources</h3>
+          <p>
+            This page is seeded from high-signal public calendars across London’s
+            tech and maker communities. More sources coming soon.
+          </p>
+          <ul class="small">
+            <li>London Hackspace</li>
+          </ul>
+        </section>
+
+        <section class="card" id="submit" style="margin-top:16px;">
+          <h3>Add your calendar</h3>
+          <p class="small">
+            If you run a London geek group and publish a public Google Calendar / iCal / RSS feed, we’ll happily include it.
+          </p>
+          <p class="small">
+            For now: open a GitHub issue on the repo with the feed URL.
+          </p>
+        </section>
+
+        <section class="card" style="margin-top:16px;">
+          <h3>What this is</h3>
+          <p class="small">
+            No algorithm. No doomscrolling. Just “what’s on” for London’s nerdy side.
+          </p>
+        </section>
+      </aside>
     </section>
   </main>
 
-  <footer class="wrap small">
-    <p>Built to be useful, not noisy. No ads (yet).</p>
+  <footer class="footer">
+    <div class="footer-inner">
+      <div>© LondonGeek.org</div>
+      <div class="small">Built for usefulness. Suggestions welcome.</div>
+    </div>
   </footer>
+
+  <script>
+    // Simple “Updated …” text without needing a build step.
+    // Uses the browser’s locale/timezone (fine for UK audience).
+    const el = document.getElementById('updated');
+    const d = new Date();
+    const opts = { day: '2-digit', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' };
+    el.textContent = d.toLocaleString('en-GB', opts);
+  </script>
 </body>
 </html>
