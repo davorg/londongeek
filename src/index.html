@@ -1,12 +1,85 @@
 <!doctype html>
 <html lang="en-GB">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HEWVW1T81G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-HEWVW1T81G');
+  </script>
+
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>London Geek — events for London’s nerdy side</title>
-  <meta name="description" content="A lightweight, always-up-to-date list of geeky events in London: meetups, hackspaces, tech talks, workshops." />
+  <title>London Geek — geeky things to do in London</title>
+  <meta name="description" content="A low-noise, always-fresh listing of London’s geeky events: meetups, hack nights, talks and workshops — pulled from public calendars." />
+  <link rel="canonical" href="https://londongeek.org/" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="London Geek" />
+  <meta property="og:title" content="London Geek — geeky things to do in London" />
+  <meta property="og:description" content="A low-noise, always-fresh listing of London’s geeky events: meetups, hack nights, talks and workshops — pulled from public calendars." />
+  <meta property="og:url" content="https://londongeek.org/" />
+  <meta property="og:locale" content="en_GB" />
+
+  <!-- Add once you have an image at /og.png (1200×630) -->
+  <!--
+  <meta property="og:image" content="https://londongeek.org/og.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="London Geek — geeky events in London" />
+  -->
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="London Geek — geeky things to do in London" />
+  <meta name="twitter:description" content="A low-noise, always-fresh listing of London’s geeky events: meetups, hack nights, talks and workshops — pulled from public calendars." />
+  <!-- <meta name="twitter:image" content="https://londongeek.org/og.png" /> -->
+
   <link rel="stylesheet" href="/style.css" />
+
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://londongeek.org/#website",
+      "url": "https://londongeek.org/",
+      "name": "London Geek",
+      "description": "A low-noise, always-fresh listing of London’s geeky events: meetups, hack nights, talks and workshops — pulled from public calendars.",
+      "inLanguage": "en-GB",
+      "publisher": {
+        "@type": "Organization",
+        "@id": "https://londongeek.org/#publisher",
+        "name": "London Geek"
+      }
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://londongeek.org/#home",
+      "url": "https://londongeek.org/",
+      "name": "London Geek — geeky things to do in London",
+      "description": "A low-noise, always-fresh listing of London’s geeky events: meetups, hack nights, talks and workshops — pulled from public calendars.",
+      "isPartOf": {
+        "@id": "https://londongeek.org/#website"
+      },
+      "inLanguage": "en-GB",
+      "about": [
+        { "@type": "Thing", "name": "Technology events" },
+        { "@type": "Thing", "name": "Maker culture" },
+        { "@type": "Thing", "name": "Meetups" }
+      ],
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Greater London"
+      }
+    }
+  ]
+}
+  </script>
 </head>
 <body>
   <header class="topbar">
