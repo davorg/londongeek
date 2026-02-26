@@ -17,7 +17,7 @@ London Geek (`londongeek.org`) is a **pure static website** that lists London te
     ├── index.html               # Main (and only) page
     ├── style.css                # All styles
     ├── favicon.svg              # SVG favicon
-    ├── robots.xml               # Robots file (non-standard .xml extension — see Known Notes)
+    ├── robots.txt               # Robots exclusion file
     └── sitemap.xml              # XML sitemap
 ```
 
@@ -74,11 +74,10 @@ Calendars can also be iCal/RSS feeds in future — see the "Add your calendar" c
 - Canonical URL is `https://londongeek.org/`
 - Structured data (JSON-LD) for `WebSite` and `CollectionPage` is embedded in a `<script type="application/ld+json">` block
 - `src/sitemap.xml` lists the single canonical URL
-- `src/robots.xml` (note: `.xml`, not `.txt`) allows all bots and points to the sitemap
+- `src/robots.txt` allows all bots and points to the sitemap
 
 ## Known Notes
 
-- **`robots.xml` uses a non-standard `.xml` extension** instead of the conventional `robots.txt`. Most search engines will not recognise `robots.xml` as the robots exclusion file (RFC 9309 requires `robots.txt`). If creating or renaming this file, use `robots.txt` and update the sitemap reference inside it accordingly. Until then, do not add logic that assumes the robots file is being respected by crawlers.
 - An OG image (`/og.png`, 1200×630) is commented out in `index.html` — it can be enabled once the image is added to `src/`.
 - Google Analytics (GA4) tag `G-HEWVW1T81G` is included via gtag.js in the `<head>`.
 - The `<link rel="me" href="https://github.com/davorg" />` tag links the site to the owner's GitHub profile (used by Mastodon/IndieWeb identity verification).
